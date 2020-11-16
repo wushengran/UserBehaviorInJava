@@ -58,6 +58,7 @@ public class HotItems {
 
         DataStream<String> inputStream = env.addSource(new FlinkKafkaConsumer<String>("hotitems", new SimpleStringSchema(), properties));
 
+
         // 3. 转换为POJO，分配时间戳和watermark
         DataStream<UserBehavior> dataStream = inputStream
                 .map(line -> {
