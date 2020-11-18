@@ -135,6 +135,7 @@ public class AdStatisticsByProvince {
             // 1. 判断是否是第一个数据，如果是的话，注册一个第二天0点的定时器
             if( curCount == 0 ){
                 Long ts = (ctx.timerService().currentProcessingTime() / (24*60*60*1000) + 1) * (24*60*60*1000) - 8*60*60*1000;
+//                System.out.println(new Timestamp(ts));
                 ctx.timerService().registerProcessingTimeTimer(ts);
             }
 
